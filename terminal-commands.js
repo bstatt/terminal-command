@@ -9,3 +9,16 @@ module.exports.ls = () => {
     console.log(filesToString);
   });
 };
+
+module.exports.touch = (file) => {
+  fs.writeFile(`${file}`, '', 'utf8', (err) => {
+    if (err) throw err;
+
+  });
+};
+
+module.exports.mkdir = (directory) => {
+  fs.mkdir(`${directory}`, (err) => {
+    if (err) throw err;
+  })
+};
